@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="pt-br">
 
 <head>
@@ -56,7 +55,9 @@
     </footer>
 
     <script> // Lembrar de remover isso depois quando o site estiver completo.
-        console.log('🚧 Site em construção... 🚧');
+        window.alert('🚧 Site em construção... 🚧');
     </script>
+
 </body>
+
 </html>
