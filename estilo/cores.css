@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+:root {
+    --cor-texto: black;
+    --cor-fundo: white;
+    
+    --cor-primaria: blue;
+    --cor-secundaria: darkblue;
+    --cor-terciaria: lightblue;
+    
+    --cor-erro: red;
+    --cor-link: purple;
+
+    --cor-table-fundo-alternativo: #dddcdc;
+    
+    --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body.escuro {
+    --cor-texto: white;
+    --cor-fundo: black;
+
+    --cor-primaria: rgb(99, 99, 243);
+    --cor-secundaria: rgb(53, 53, 134);
+    --cor-terciaria: rgb(182, 209, 218);
+    
+    --cor-erro: #cf6679;
+    --cor-link: rgb(182, 85, 182);
+}

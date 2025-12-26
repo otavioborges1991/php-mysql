@@ -1,9 +1,5 @@
 @charset "UTF-8";
 
-:root {
-    --cor-table-fundo-alternativo: #dddcdc;
-}
-
 table.listagem {
     width: 100%;
     text-align: left;
