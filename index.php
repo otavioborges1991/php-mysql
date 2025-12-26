@@ -55,5 +55,8 @@
         Desenvolvido por Otávio Vinícius Borges &copy; 2025
     </footer>
 
+    <script> // Lembrar de remover isso depois quando o site estiver completo.
+        console.log('🚧 Site em construção... 🚧');
+    </script>
 </body>
 </html>

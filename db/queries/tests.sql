@@ -4,3 +4,4 @@ SELECT * FROM produtoras;
 SELECT * FROM generos;
 SELECT * FROM usuarios;
 SELECT * FROM jogos;
+
