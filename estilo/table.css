@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+:root {
+    --cor-table-fundo-alternativo: #dddcdc;
+}
+
+table.listagem {
+    width: 100%;
+    text-align: left;
+}
+
+table.listagem tr {
+    height: 50px;
+}
+
+table.listagem td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+table.listagem tr:nth-child(even) {
+    background-color: var(--cor-table-fundo-alternativo);
+}
+
+table.listagem td:first-child { /* pode ser nth-child(1) */
+    width: 50px;
+    text-align: center;
+}
+
+table.listagem td:nth-child(3) {
+    width: 90px;
+}
