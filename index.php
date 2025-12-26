@@ -1,5 +1,7 @@
 <!DOCTYPE html>
+
 <html lang="pt-br">
+
 <head>
 
     <meta charset="UTF-8">
@@ -52,5 +54,6 @@
     <footer>
         Desenvolvido por Otávio Vinícius Borges &copy; 2025
     </footer>
+
 </body>
 </html>

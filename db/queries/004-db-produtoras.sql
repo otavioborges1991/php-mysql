@@ -1,0 +1,15 @@
+INSERT INTO IF NOT EXISTS `produtoras` (`cod`, `produtora`, `pais`) VALUES
+('Microsoft', 'EUA'),
+('Tencent', 'China'),
+('Nintendo', 'Japão'),
+('Sony', 'Japão'),
+('Activision', 'EUA'),
+('EA', 'EUA'),
+('Sega', 'Japão'),
+('Namco Bandai', 'Japão'),
+('Konami', 'Japão'),
+('Ubisoft', 'EUA'),
+('Valve', 'EUA'),
+('Square Enix', 'Japão'),
+('Take Two', 'EUA'),
+('Capcom', 'Japão');
