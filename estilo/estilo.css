@@ -17,6 +17,7 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
+    gap: 10px;
     color: var(--cor-texto);
     background-color: var(--cor-fundo);
 }
@@ -26,20 +27,22 @@ header, footer {
     color: var(--cor-fundo);
     text-align: center;
     padding: 10px 0px;
-    width: 100vw;
+    width: 110vw; /* Ajuste para cobrir toda a largura da viewport, 100vw não tava dando */
 }
 
 header {
     position: fixed;
     top: 0px;
     z-index: 1;
+    left: 0px;
+    
 }
 
 footer {
-    margin-top: auto;
     position: fixed;
     bottom: 0px;
-    width: 100vw;
+    left: 0px;
+    margin-top: 150px;
 }
 
 .mini {
