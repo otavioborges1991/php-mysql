@@ -27,7 +27,6 @@ header, footer {
 }
 
 header {
-    position: sticky;
     top: 0px;
     z-index: 1;
     width: 100%;
@@ -35,14 +34,19 @@ header {
 
 main {
     padding: 2px;
-    height: calc(100vh - 250px);
-    margin-bottom: 160px; /* Espaço para o footer fixo, pode ser redundante */
+    height: 100vh;
+    margin-bottom: 200px; /* Espaço para o footer fixo, pode ser redundante */
 }
 
 footer {
-    position: fixed;
-    margin-top: 50px;
+    height: 160px;
     bottom: 0px;
     left: 0px;
-    width: 100%;
+    width: 100vw;
+}
+
+
+.mini {
+    width: auto;
+    height: 100px;
 }

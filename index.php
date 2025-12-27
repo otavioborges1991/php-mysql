@@ -7,14 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listagem de jogos</title>
     <link rel="stylesheet" href="estilo/estilo.css">
-
 </head>
-
 <body>
 
     <?php
         // Conexão com o banco de dados
         require_once 'includes/banco.php';
+        // Funções auxiliares
+        require_once 'includes/funcoes.php';
 
     ?>
 
@@ -34,25 +34,28 @@
                 $busca = $banco->query("SELECT * FROM jogos");
                 
                 if (!$busca) {
-
+                    // em caso de erro na consulta
                     echo "Falha na busca: $banco->error";
 
                 } else {
-
+                    // consulta realizada com sucesso
                     if ($busca->num_rows == 0) {
-                        
+                        // nenhum jogo cadastrado
                         echo "<p>Nenhum jogo cadastrado</p>";
-
                     } else {
-
+                        // exibir a lista de jogos
                         while ($reg=$busca->fetch_object()) {
-
                             // Exibir cada jogo (código omitido)
-                            echo "<tr><td>$reg->capa</td><td>$reg->nome</td><td>adm</td></tr>";
+                            $t = thumb($reg->capa);
+                            echo 
+                            "<tr>
+                                <td><img class='mini' src='$t' alt='Capa do $reg->nome'></td>
+                                <td>$reg->nome</td>
+                                <td>adm</td>
+                            </tr>";
                         }
                     }
                 }
-
             ?>
 
         </table>
