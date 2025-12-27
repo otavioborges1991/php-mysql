@@ -12,6 +12,12 @@
 
 <body>
 
+    <?php
+        // Conexão com o banco de dados
+        require_once 'includes/banco.php';
+
+    ?>
+
     <header>
         <h1>Header</h1>
     </header>
@@ -20,31 +26,34 @@
 
         <h2>Escolha seu jogo</h2>
 
+
         <table class="listagem">
 
-            <tr>
-                <td>foto</td>
-                <td>nome</td>
-                <td>adm</td>
-            </tr>
+            <?php
 
-            <tr>
-                <td>foto</td>
-                <td>nome</td>
-                <td>adm</td>
-            </tr>
+                $busca = $banco->query("SELECT * FROM jogos");
+                
+                if (!$busca) {
 
-            <tr>
-                <td>foto</td>
-                <td>nome</td>
-                <td>adm</td>
-            </tr>
+                    echo "Falha na busca: $banco->error";
 
-            <tr>
-                <td>foto</td>
-                <td>nome</td>
-                <td>adm</td>
-            </tr>
+                } else {
+
+                    if ($busca->num_rows == 0) {
+                        
+                        echo "<p>Nenhum jogo cadastrado</p>";
+
+                    } else {
+
+                        while ($reg=$busca->fetch_object()) {
+
+                            // Exibir cada jogo (código omitido)
+                            echo "<tr><td>$reg->capa</td><td>$reg->nome</td><td>adm</td></tr>";
+                        }
+                    }
+                }
+
+            ?>
 
         </table>
         
@@ -53,10 +62,6 @@
     <footer>
         Desenvolvido por Otávio Vinícius Borges &copy; 2025
     </footer>
-
-    <script> // Lembrar de remover isso depois quando o site estiver completo.
-        window.alert('🚧 Site em construção... 🚧');
-    </script>
 
 </body>
 
