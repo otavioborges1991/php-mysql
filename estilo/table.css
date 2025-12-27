@@ -4,6 +4,11 @@ table.listagem {
     width: 100%;
     text-align: left;
 }
+/* Remover espaçamento entre células */
+table.listagem {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
 
 table.listagem tr {
     height: 50px;
