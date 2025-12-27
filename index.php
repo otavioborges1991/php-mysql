@@ -18,7 +18,7 @@
     ?>
 
     <header>
-        <h1>Header</h1>
+        <h1>Pagina Principal</h1>
     </header>
 
     <main>

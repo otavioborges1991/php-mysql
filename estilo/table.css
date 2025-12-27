@@ -31,3 +31,7 @@ table.listagem td:first-child { /* pode ser nth-child(1) */
 table.listagem td:nth-child(3) {
     width: 90px;
 }
+
+table.detalhes {
+    width: 100%;
+}

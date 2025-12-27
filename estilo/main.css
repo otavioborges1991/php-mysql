@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+main {
+    padding: 2px;
+    margin-top: 150px;
+}
+
+main.detalhes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+main.detalhes h2 {
+    text-align: center;
+}
+main.detalhes p {
+    text-indent: 10px;
+    margin: 10px 10px 50px 10px;
+    text-align: justify;
+}
