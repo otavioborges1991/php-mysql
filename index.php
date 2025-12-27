@@ -15,7 +15,6 @@
         require_once 'includes/banco.php';
         // Funções auxiliares
         require_once 'includes/funcoes.php';
-
     ?>
 
     <header>
@@ -25,7 +24,6 @@
     <main>
 
         <h2>Escolha seu jogo</h2>
-
 
         <table class="listagem">
 
@@ -50,7 +48,7 @@
                             echo 
                             "<tr>
                                 <td><img class='mini' src='$t' alt='Capa do $reg->nome'></td>
-                                <td>$reg->nome</td>
+                                <td><a href='detalhes.php?cod=$reg->cod'>$reg->nome</a></td>
                                 <td>adm</td>
                             </tr>";
                         }
