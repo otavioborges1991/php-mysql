@@ -29,7 +29,7 @@
 
             <?php
 
-                $busca = $banco->query("SELECT * FROM jogos");
+                $busca = $banco->query("SELECT * FROM jogos ORDER BY cod DESC");
                 
                 if (!$busca) {
                     // em caso de erro na consulta
