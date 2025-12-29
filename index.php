@@ -15,11 +15,11 @@
         require_once 'includes/banco.php';
         // Funções auxiliares
         require_once 'includes/funcoes.php';
+
+        // Cabeçalho da página
+        require_once 'cabeçalho.php';
     ?>
 
-    <header>
-        <h1>Pagina Principal</h1>
-    </header>
 
     <main>
 
@@ -28,7 +28,9 @@
         <table class="listagem">
 
             <?php
+
                 $query_mais_novo = 
+
                 "SELECT j.cod, j.nome, j.capa, g.genero AS genero, p.produtora AS produtora
                 FROM jogos j 
                 JOIN generos g on j.genero = g.cod 
@@ -71,9 +73,7 @@
         
     </main>
 
-    <footer>
-        Desenvolvido por Otávio Vinícius Borges &copy; 2025
-    </footer>
+    <?php require_once 'rodapé.php'; ?>
 
 </body>
 
