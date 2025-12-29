@@ -29,3 +29,11 @@ main.detalhes img.botao-voltar {
     cursor: pointer;
     float: left;
 }
+
+main .msg {
+    color: green;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+

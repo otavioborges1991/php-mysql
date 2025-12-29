@@ -14,9 +14,7 @@
         require_once 'includes/funcoes.php';
     ?>
 
-    <header>
-        <h1>Detalhes do Jogo</h1>
-    </header>
+    <?php include 'cabeçalho.php'; ?>
 
     <main class="detalhes">
         <?php 
@@ -69,8 +67,6 @@
 
     </main>
 
-    <footer>
-        Desenvolvido por Otávio Vinícius Borges &copy; 2025
-    </footer>
+    <?php include 'rodapé.php'; ?>
 </body>
 </html>

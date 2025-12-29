@@ -2,9 +2,10 @@
 
 @import url(cores.css);
 @import url(main.css);
-@import url(media-query.css);
 @import url(table.css);
 @import url(ancora.css);
+@import url(formulário.css);
+@import url(media-query.css);
 
 *,
 *::before,

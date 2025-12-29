@@ -2,6 +2,22 @@
 
 
 @media screen and (min-width:768px) {
+    /* Em telas grandes: mostrar sempre o formulário e restaurar layout do header */
+    .toggle-btn { display: none; }
+
+    .login-hidden,
+    .login-visible { display: block !important; }
+
+    header {
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    header form,
+    header #login-container { margin: 0; width: auto; }
+
     main { 
         max-width: 80vw;
         margin: 50px auto;
@@ -15,6 +31,22 @@
         align-items: center;
         justify-content: center;
         max-width: 800px;
+    }
+
+    form,
+    form input[type="text"],
+    form input[type="number"],
+    form input[type="password"],
+    form button[type="submit"],
+    form select {
+        all: revert;
+    }
+    
+    form { margin-bottom: 10px; }
+
+    form button[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
     }
 
 }

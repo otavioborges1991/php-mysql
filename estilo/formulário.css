@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+/* Estilos para toggle do formulário (aplicados em telas pequenas)
+   O formulário fica oculto por padrão e é revelado pelo botão `.toggle-btn` */
+.toggle-btn {
+    padding: 10px 16px;
+    font-size: 15px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.toggle-btn:hover { background-color: #45a049; }
+
+.login-hidden { display: none; }
+.login-visible { display: block; }
+
+form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+    width: 300px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="password"] {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button[type="submit"] {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+form select {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}

@@ -23,7 +23,38 @@
 
     <main>
 
+        <?php
+            // Verifica se há uma mensagem de status na URL
+            if (isset($_GET['msg'])) {
+                // Exibe a mensagem de status
+                echo "<p class='msg'>" . htmlspecialchars($_GET['msg']) . "</p>";
+            } // não sei pra que isso serve mas o copilot me sugeriu, talvez eu use isso depois.
+        ?>
+
+
         <h2>Escolha seu jogo</h2>
+
+        <button id="toggle-search" class="toggle-btn" data-target="#search-container" data-hide-text="Ocultar busca" aria-expanded="false">Buscar</button>
+        <div id="search-container" class="login-hidden">
+        <form method="GET" class="busca-form">
+            <input type="text" name="busca" placeholder="Busque por um jogo..." value="<?php echo isset($_GET['busca']) ? htmlspecialchars($_GET['busca']) : ''; ?>">
+            
+            <select name="ordenar">
+                <option value="cod" <?php echo isset($_GET['ordenar']) && $_GET['ordenar'] === 'cod' ? 'selected' : ''; ?>>Adicionado</option>
+                <option value="nome" <?php echo isset($_GET['ordenar']) && $_GET['ordenar'] === 'nome' ? 'selected' : ''; ?>>Nome</option>
+                <option value="genero" <?php echo isset($_GET['ordenar']) && $_GET['ordenar'] === 'genero' ? 'selected' : ''; ?>>Gênero</option>
+                <option value="produtora" <?php echo isset($_GET['ordenar']) && $_GET['ordenar'] === 'produtora' ? 'selected' : ''; ?>>Produtora</option>
+                <option value="nota" <?php echo isset($_GET['ordenar']) && $_GET['ordenar'] === 'nota' ? 'selected' : ''; ?>>Nota</option>
+            </select>
+            
+            <select name="ordem">
+                <option value="DESC" <?php echo isset($_GET['ordem']) && $_GET['ordem'] === 'DESC' ? 'selected' : ''; ?>>Descendente</option>
+                <option value="ASC" <?php echo isset($_GET['ordem']) && $_GET['ordem'] === 'ASC' ? 'selected' : ''; ?>>Ascendente</option>
+            </select>
+            
+            <button type="submit">Pesquisar</button>
+        </form>
+        </div>
 
         <table class="listagem">
 
