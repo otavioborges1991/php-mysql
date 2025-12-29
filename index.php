@@ -28,8 +28,15 @@
         <table class="listagem">
 
             <?php
+                $query_mais_novo = 
+                "SELECT j.cod, j.nome, j.capa, g.genero AS genero, p.produtora AS produtora
+                FROM jogos j 
+                JOIN generos g on j.genero = g.cod 
+                JOIN produtoras p on j.produtora = p.cod
+                ORDER BY cod DESC";
 
-                $busca = $banco->query("SELECT * FROM jogos ORDER BY cod DESC");
+
+                $busca = $banco->query($query_mais_novo);
                 
                 if (!$busca) {
                     // em caso de erro na consulta
@@ -48,7 +55,11 @@
                             echo 
                             "<tr>
                                 <td><img class='mini' src='$t' alt='Capa do $reg->nome'></td>
-                                <td><a href='detalhes.php?cod=$reg->cod'>$reg->nome</a></td>
+                                <td>
+                                    <h2><a href='detalhes.php?cod=$reg->cod'>$reg->nome</a></h2>
+                                    <h3>$reg->genero</h3>
+                                    <h3>$reg->produtora</h3>
+                                </td>
                                 <td>adm</td>
                             </tr>";
                         }

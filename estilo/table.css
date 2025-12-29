@@ -35,3 +35,14 @@ table.listagem td:nth-child(3) {
 table.detalhes {
     width: 100%;
 }
+
+table h2, h3 {
+    font-size: 1.1em;
+    margin: 0;
+    padding: 0;
+    line-height: 1.1em;
+}
+
+table h3 {
+    font-size: 0.9em;
+}

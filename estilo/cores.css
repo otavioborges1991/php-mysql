@@ -8,8 +8,8 @@
     --cor-secundaria: darkblue;
     --cor-terciaria: lightblue;
     
-    --cor-erro: red;
-    --cor-link: purple;
+    --cor-erro: #cf6679;
+    --cor-link-visitado: rgb(182, 85, 182);
 
     --cor-table-fundo-alternativo: #dddcdc;
     
@@ -25,5 +25,5 @@ body.escuro {
     --cor-terciaria: rgb(182, 209, 218);
     
     --cor-erro: #cf6679;
-    --cor-link: rgb(182, 85, 182);
+    --cor-link-visitado: rgb(182, 85, 182);
 }

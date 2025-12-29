@@ -58,3 +58,17 @@ footer {
     height: 300px;
     margin: auto;
 }
+
+a {
+    color: var(--cor-secundaria);
+    text-decoration: none;
+}
+
+a:visited {
+    color: var(--cor-link-visitado);
+}
+
+a:invalid {
+    color: var(--cor-erro);
+}
+
