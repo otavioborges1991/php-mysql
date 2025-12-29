@@ -11,6 +11,8 @@ main.detalhes {
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 main.detalhes h2 {
     text-align: center;
@@ -19,4 +21,11 @@ main.detalhes p {
     text-indent: 10px;
     margin: 10px;
     text-align: justify;
+}
+
+main.detalhes img.botao-voltar {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    float: left;
 }

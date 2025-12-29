@@ -51,8 +51,11 @@
                     echo "<img id='foto' src='$foto' alt='Foto'>";
                     echo "<div id='conteudo-escrito'>";
                     echo "<h2 id='nome'>$reg->nome</h2>";
+                    echo "<h3>Nota: " . number_format($reg->nota, 1) . "/10</h3>";
                     echo "<p id='descricao'>$reg->descricao</p>";
+                    echo "<div class='adm'>ADM</div>";
                     echo "</div>";
+                    echo "<img class='botao-voltar' src='icones/icoback.png' alt='Voltar' class='botao' onclick='history.back()'>";
 
                 } else {
 
@@ -61,11 +64,6 @@
 
                 }
             }
-
-
-
-
-            
             ?>
 
 
