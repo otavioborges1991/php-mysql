@@ -9,7 +9,8 @@ function thumb($arg): string {
     }
 }
 
-function contruir_tabela():void {
+// Abaixo esta a funçao de contruir tabelas usadas anteriormente
+/* function contruir_tabela():void {
     // exibir a lista de jogos
     global $busca;
     while ($reg=$busca->fetch_object()) {
@@ -29,7 +30,7 @@ function contruir_tabela():void {
             </tr>
         </table>";
     }
-}
+} */ 
 
 function construir_query($chave, $criterio, $ordem): string {
     $query = 

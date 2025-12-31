@@ -22,7 +22,7 @@
     <main>
 
         <?php
-        
+
             // Verifica se há uma mensagem de status na URL
             if (isset($_GET['msg'])) {
                 // Exibe a mensagem de status
@@ -57,7 +57,8 @@
                 echo "<p>Nenhum jogo cadastrado</p>";
             } else {
                 // Diferente de como ensinado no curso, estou chamando uma função para criar a tabela
-                contruir_tabela();                   
+                // contruir_tabela();
+                require_once "tabela.php";               
             }
         }
     ?>
