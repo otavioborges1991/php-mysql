@@ -45,7 +45,7 @@
     form { margin-bottom: 10px; }
 
     form button[type="submit"] {
-        background-color: #4CAF50;
+        background-color: var(--cor-secundaria);
         color: white;
     }
 

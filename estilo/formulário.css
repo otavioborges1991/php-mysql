@@ -5,7 +5,7 @@
 .toggle-btn {
     padding: 10px 16px;
     font-size: 15px;
-    background-color: #4CAF50;
+    background-color: var(--cor-secundaria);
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -13,7 +13,7 @@
     margin-bottom: 15px;
 }
 
-.toggle-btn:hover { background-color: #45a049; }
+.toggle-btn:hover { background-color: var(--cor-terciaria); }
 
 .login-hidden { display: none; }
 .login-visible { display: block; }
@@ -40,7 +40,7 @@ form input[type="password"] {
 form button[type="submit"] {
     padding: 10px;
     font-size: 16px;
-    background-color: #4CAF50;
+    background-color: var(--cor-secundaria);
     color: white;
     border: none;
     border-radius: 4px;
@@ -48,7 +48,8 @@ form button[type="submit"] {
 }
 
 form button[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: var(--cor-terciaria);
+    color: black;
 }
 
 form select {
