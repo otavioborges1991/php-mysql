@@ -5,7 +5,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listagem de jogos</title>
+    <title>Banco de Jogos</title>
     <link rel="stylesheet" href="estilo/estilo.css">
 </head>
 <body>
@@ -15,22 +15,20 @@
         require_once 'includes/banco.php';
         // Funções auxiliares
         require_once 'includes/funcoes.php';
-
         // Cabeçalho da página
         require_once 'cabeçalho.php';
     ?>
 
-
     <main>
 
         <?php
+        
             // Verifica se há uma mensagem de status na URL
             if (isset($_GET['msg'])) {
                 // Exibe a mensagem de status
                 echo "<p class='msg'>" . htmlspecialchars($_GET['msg']) . "</p>";
             } // não sei pra que isso serve mas o copilot me sugeriu, talvez eu use isso depois.
         ?>
-
 
         <h2>Escolha seu jogo</h2>
 
@@ -39,44 +37,31 @@
             require_once 'formulario-busca.php';
         ?>
 
-        <table class="listagem">
+    <?php
 
-            <?php
+        // Estes 2 tem que mudar dinamicamente de acordo com o formulário de busca
+        $criterio = $_GET['criterio'] ?? "cod";
+        $ordem = $_GET['ordem'] ?? "ASC";
+        $chave = $_GET['busca'] ?? "";
 
-                // Estes 2 tem que mudar dinamicamente de acordo com o formulário de busca
-                $criterio = $_GET['criterio'] ?? "cod";
-                $ordem = $_GET['ordem'] ?? "ASC";
-                $busca = $_GET['busca'] ?? "";
-
-                $query = 
-
-                "SELECT j.cod, j.nome, j.capa, j.nota AS nota, g.genero AS genero, p.produtora AS produtora
-                FROM jogos j 
-                JOIN generos g on j.genero = g.cod 
-                JOIN produtoras p on j.produtora = p.cod
-                ORDER BY $criterio $ordem";
-
-
-                $busca = $banco->query($query);
-                
-                if (!$busca) {
-                    // em caso de erro na consulta
-                    echo "Falha na busca: $banco->error";
-
-                } else {
-                    // consulta realizada com sucesso
-                    if ($busca->num_rows == 0) {
-                        // nenhum jogo cadastrado
-                        echo "<p>Nenhum jogo cadastrado</p>";
-                    } else {
-                        // Diferente de como ensinado no curso, estou chamando uma função para criar a tabela
-                        contruir_tabela();                   
-                    }
-                }
-            ?>
-
-        </table>
+        $busca = $banco->query(construir_query($chave, $criterio, $ordem));
         
+        if (!$busca) {
+            // em caso de erro na consulta
+            echo "Falha na busca: $banco->error";
+
+        } else {
+            // consulta realizada com sucesso
+            if ($busca->num_rows == 0) {
+                // nenhum jogo cadastrado
+                echo "<p>Nenhum jogo cadastrado</p>";
+            } else {
+                // Diferente de como ensinado no curso, estou chamando uma função para criar a tabela
+                contruir_tabela();                   
+            }
+        }
+    ?>
+
     </main>
 
     <?php require_once 'rodapé.php'; ?>
