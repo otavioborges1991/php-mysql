@@ -33,6 +33,7 @@ function thumb($arg): string {
 } */ 
 
 function construir_query($chave, $criterio, $ordem): string {
+    
     $query = 
 
     "SELECT j.cod, j.nome, j.capa, j.nota AS nota, g.genero AS genero, p.produtora AS produtora
@@ -42,7 +43,9 @@ function construir_query($chave, $criterio, $ordem): string {
     ";
 
     if (!empty($chave)) {
+
         $query .= " WHERE j.nome like '%$chave%'";
+    
     }
     
     $query .= " ORDER BY $criterio $ordem ";

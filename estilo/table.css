@@ -24,7 +24,7 @@ table.listagem tr:nth-child(even) {
 }
 
 table.listagem td:first-child { /* pode ser nth-child(1) */
-    width: 50px;
+    width: 130px;
     text-align: center;
 }
 

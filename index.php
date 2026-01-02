@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banco de Jogos</title>
     <link rel="stylesheet" href="estilo/estilo.css">
+    
 </head>
+
 <body>
 
     <?php
@@ -34,7 +36,9 @@
 
         <?php
             // Incluir o formulário de busca
-            require_once 'formulario-busca.php';
+            
+            require_once 'formulário de busca.php';
+
         ?>
 
     <?php
