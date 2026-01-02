@@ -7,7 +7,7 @@
 </head>
 <body>
     <?php
-    require_once "includes/funcoes.php";
+    require_once "includes/funções.php";
     require_once "includes/banco.php";
     ?>
     <img id='foto' src='<?php echo $foto?>' alt='Foto'>

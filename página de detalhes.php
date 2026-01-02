@@ -12,7 +12,7 @@
         // Conexão com o banco de dados
         require_once 'includes/banco.php';
         // Funções auxiliares
-        require_once 'includes/funcoes.php';
+        require_once 'includes/funções.php';
         ?>
 
 <?php include 'cabeçalho.php'; ?>

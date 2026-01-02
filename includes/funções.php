@@ -52,3 +52,37 @@ function construir_query($chave, $criterio, $ordem): string {
 
     return $query;
 }
+
+function mensagem($mensagem, $tipo): void {
+
+    if ($tipo != 'erro' && $tipo != 'aviso' && $tipo != 'sucesso' && $tipo != 'mensagem') {
+        $tipo = 'erro';
+        $mensagem = "Uma mensagem de tipo invalido tentou ser enviada!";
+    }
+
+    $icone = tipo_de_icone($tipo);
+
+    
+    include "mensagem.php";
+}
+
+function tipo_de_icone($tipo) {
+    switch ($tipo) {
+        case "erro":
+            $icone = "💀";
+            break;
+        case "aviso":
+            $icone = "⚠️";
+            break;
+        case "sucesso":
+            $icone = "✔️";
+            break;
+        case "mensagem":
+            $icone = "💬";
+            break;
+        default:
+            $icone = "❔";
+        }
+
+        return $icone;
+}

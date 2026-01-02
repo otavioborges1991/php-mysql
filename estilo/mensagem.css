@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+#mensagem {
+    position: absolute;
+    z-index: 9;
+    background-color: #f1f1f1;
+    border: 1px solid #d3d3d3;
+    text-align: center;
+    min-width: 300px;
+    min-height: 100px;
+}
+
+#mensagemdrag {
+    padding: 10px;
+    cursor: move;
+    z-index: 10;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+#mensagem button {
+    float: right;
+}
+
+#mensagem p {
+    padding: 10px;
+}
+
+.sucesso {
+    background-color: var(--cor-sucesso);
+}
+
+.aviso {
+    background-color: var(--cor-aviso);
+}
+
+.erro {
+    background-color: var(--cor-erro);
+}
+
+.mensagem {
+    background-color: var(--cor-primaria);
+}

@@ -16,21 +16,12 @@
         // Conexão com o banco de dados
         require_once 'includes/banco.php';
         // Funções auxiliares
-        require_once 'includes/funcoes.php';
+        require_once 'includes/funções.php';
         // Cabeçalho da página
         require_once 'cabeçalho.php';
     ?>
 
     <main>
-
-        <?php
-
-            // Verifica se há uma mensagem de status na URL
-            if (isset($_GET['msg'])) {
-                // Exibe a mensagem de status
-                echo "<p class='msg'>" . htmlspecialchars($_GET['msg']) . "</p>";
-            } // não sei pra que isso serve mas o copilot me sugeriu, talvez eu use isso depois.
-        ?>
 
         <h2>Escolha seu jogo</h2>
 
@@ -42,6 +33,8 @@
         ?>
 
     <?php
+
+        mensagem('Olá, mundo!', 'mensagem');
 
         // Estes 2 tem que mudar dinamicamente de acordo com o formulário de busca
         $criterio = $_GET['criterio'] ?? "cod";
@@ -70,6 +63,7 @@
     </main>
 
     <?php require_once 'rodapé.php'; ?>
+    <script src="scripts/draggable-element.js"></script>
 
 </body>
 

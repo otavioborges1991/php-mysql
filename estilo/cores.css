@@ -8,7 +8,9 @@
     --cor-secundaria: darkblue;
     --cor-terciaria: lightblue;
     
-    --cor-erro: #cf6679;
+    --cor-erro: red;
+    --cor-aviso: SaddleBrown;
+    --cor-sucesso:rgb(37, 133, 37);
     --cor-link-visitado: rgb(182, 85, 182);
 
     --cor-table-fundo-alternativo: #dddcdc;
