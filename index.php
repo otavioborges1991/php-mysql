@@ -34,8 +34,6 @@
 
     <?php
 
-        mensagem('Olá, mundo!', 'mensagem');
-
         // Estes 2 tem que mudar dinamicamente de acordo com o formulário de busca
         $criterio = $_GET['criterio'] ?? "cod";
         $ordem = $_GET['ordem'] ?? "ASC";
