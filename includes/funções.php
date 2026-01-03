@@ -53,20 +53,33 @@ function construir_query($chave, $criterio, $ordem): string {
     return $query;
 }
 
-function mensagem($mensagem, $tipo): void {
+function mensagem($mensagem, $tipo='mensagem'): void {
+    /*
+    descrição:
+        um sistema de mensagem, ele usa estilos diferentes de acordo com o tipo
+        tipos válidos são: erro, aviso, sucesso e mensagem.
+        se um tipo inválido for usado sera mudado para o tipo mensagem.
+        também usa um icone de acordo com o tipo.
+        o corpo html da mensagem é mantido em outro arquivo, Assim como o estilo usado.
+    Argumentos:
+        $mensagem = A mensagem a mostrar na tela
+        $tipo = o tipo de mensagem.
+    */
+
+    $mensagem = strtolower($mensagem);
+    $tipo = strtolower($tipo);
 
     if ($tipo != 'erro' && $tipo != 'aviso' && $tipo != 'sucesso' && $tipo != 'mensagem') {
-        $tipo = 'erro';
-        $mensagem = "Uma mensagem de tipo invalido tentou ser enviada!";
+        $tipo = 'mensagem';
     }
 
     $icone = tipo_de_icone($tipo);
 
-    
     include "mensagem.php";
 }
 
 function tipo_de_icone($tipo) {
+    // função para escolher o icone a ser usado no sistema de mensagem
     switch ($tipo) {
         case "erro":
             $icone = "💀";
@@ -77,11 +90,9 @@ function tipo_de_icone($tipo) {
         case "sucesso":
             $icone = "✔️";
             break;
-        case "mensagem":
+        default:
             $icone = "💬";
             break;
-        default:
-            $icone = "❔";
         }
 
         return $icone;

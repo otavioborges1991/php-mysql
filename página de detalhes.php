@@ -56,9 +56,11 @@
                 }
             }
             ?>
-            
-        <img class='botao-voltar' src='icones/icoback.png' alt='Voltar' class='botao' onclick='history.back()'>
 
+        <button class="material-symbols-outlined botao-voltar" onclick='history.back()'>
+            keyboard_arrow_left
+        </button>
+            
     </main>
 
     <?php include 'rodapé.php'; ?>
