@@ -49,4 +49,14 @@
         color: white;
     }
 
+    #login-container form {
+        display: grid;
+        grid-template-areas: 
+        "label-nome usuario"
+        "label-senha senha"
+        "entrar cadastrar"
+        ;
+
+    }
+
 }

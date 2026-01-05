@@ -41,3 +41,14 @@ body {
     margin: auto;
 }
 
+.flex-column {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+}
+
+.flex-row {
+    display: flex;
+    gap: 5px;
+    flex-direction: row;
+}

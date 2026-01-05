@@ -33,6 +33,12 @@
         ?>
 
     <?php
+        $mensagem = $_GET['mensagem'] ?? null;
+        $tipo = $_GET['tipo'] ?? null;
+        
+        if (!is_null($mensagem)) {
+            mensagem($mensagem, $tipo);
+        }
 
         // Estes 2 tem que mudar dinamicamente de acordo com o formulário de busca
         $criterio = $_GET['criterio'] ?? "cod";
@@ -61,7 +67,7 @@
     </main>
 
     <?php require_once 'rodapé.php'; ?>
-    <script src="scripts/draggable-element.js"></script>
+    
 
 </body>
 

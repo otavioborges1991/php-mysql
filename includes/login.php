@@ -1,5 +1,13 @@
 <?php
 
+session_start();
+if (!isset($_SESSION['user']))
+{
+    $_SESSION['user'] = '';
+    $_SESSION['nome'] = '';
+    $_SESSION['tipo'] = '';
+}
+
 function cripto($senha):string{
     // mais um nivel de encriptação para nosso sistema.
     $cripto = '';
@@ -18,6 +26,6 @@ function gerar_hash($senha): string {
 }
 
 function testar_hash($senha, $hash): bool {
-    $ok = password_verify(cripto($senha), $hash);
+    $ok = password_verify($senha, $hash);
     return $ok;
 }

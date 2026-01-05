@@ -16,6 +16,7 @@
         </div>
         <p><?php echo ucfirst($mensagem)?></p>
     </div>
+    <script src="scripts/draggable-element.js"></script>
 </body>
 </html>
 
