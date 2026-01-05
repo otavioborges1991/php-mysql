@@ -1,11 +1,24 @@
 <?php
+// arquivo para funções de login
+
+$ação = $_GET['ação'] ?? null;
 
 session_start();
-if (!isset($_SESSION['user']))
-{
-    $_SESSION['user'] = '';
+if (!isset($_SESSION['usuario'])) {
+    $_SESSION['usuario'] = '';
     $_SESSION['nome'] = '';
     $_SESSION['tipo'] = '';
+
+}
+
+function sair() {
+    unset($_SESSION['usuario']);
+    unset($_SESSION['nome']);
+    unset($_SESSION['tipo']);
+    session_unset();
+    session_destroy();
+    header(header: 'Location: index.php');
+    exit();
 }
 
 function cripto($senha):string{

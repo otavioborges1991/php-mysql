@@ -1,4 +1,5 @@
 <?php 
+// arquivo para funções descategorizadas
 function thumb($arg): string {
     // Função para criar miniaturas de imagens
     $caminho = "fotos/$arg";
@@ -97,3 +98,4 @@ function tipo_de_icone($tipo) {
 
         return $icone;
 }
+

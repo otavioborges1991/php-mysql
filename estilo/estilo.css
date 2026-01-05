@@ -52,3 +52,17 @@ body {
     gap: 5px;
     flex-direction: row;
 }
+
+a#botão-sair {
+    color:white;
+    background-color: var(--cor-secundaria);
+    margin: 10px;
+    font-size: smaller;
+    padding: 0px 5px 1px 5px;
+    border: 2px solid black;
+}
+
+a#botão-sair:hover {
+    color: black;
+    background-color: var(--cor-terciaria);
+}

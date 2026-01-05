@@ -41,18 +41,34 @@
         } else {
 
             $registro = $busca->fetch_object();
-             
-            if ($busca->num_rows > 0) {
-                if (testar_hash($senha, $registro->senha)) {
-                    $_SESSION['usuario'] = $registro->usuario;
+
+            if ($busca->num_rows > 0)
+
+                {
+
+                if (testar_hash($senha, $registro->senha)) 
+                {
+                    $_SESSION['usuario'] = $registro->usuario ;
                     $_SESSION['nome'] = $registro->nome;
-                    $_SESSION['tipo'] = $registro->senha;
-                    header(header: "Location: index.php?mensagem=Logado com sucesso&tipo=sucesso");
-                } else {
-                    header("Location: index.php?mensagem=Usuário ou senha incorreta&tipo=aviso");
+                    $_SESSION['tipo'] = $registro->tipo;
+                    sleep(1);
+                    header(header: "Location: index.php");
+                    mensagem("Usuário: $registro->usuario, Nome: $registro->nome, Tipo: $registro->tipo", 'mensagem');
+                    exit();
                 }
-            } else {
+
+                else 
+
+                {
+                    header(header: "Location: index.php?mensagem=Usuário ou senha incorreta&tipo=aviso");
+                    exit();
+                }
+            } 
+            else
+
+            {
                 header(header: "Location: index.php?mensagem=Usuário não existe&tipo=aviso");
+                exit();
             }
         }
     }
