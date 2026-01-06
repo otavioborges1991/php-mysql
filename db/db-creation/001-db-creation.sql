@@ -1,12 +1,12 @@
 -- Active: 1758661370891@@127.0.0.1@3306@bd_games
 CREATE DATABASE IF NOT EXISTS bd_games DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 use bd_games;
-CREATE TABLE IF NOT EXISTS usuarios (
-    usuario VARCHAR(10) NOT NULL,
+CREATE TABLE IF NOT EXISTS usuários (
+    usuário VARCHAR(10) NOT NULL,
     nome VARCHAR(50) NOT NULL,
     senha VARCHAR(60) NOT NULL,
     tipo VARCHAR(10) NOT NULL DEFAULT 'editor',
-    PRIMARY KEY (usuario)
+    PRIMARY KEY (usuário)
 ) engine=InnoDB DEFAULT charset=utf8;
 CREATE TABLE IF NOT EXISTS generos (
     cod INT(11) NOT NULL AUTO_INCREMENT,

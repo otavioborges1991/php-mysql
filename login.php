@@ -13,7 +13,7 @@
         require_once 'includes/banco.php';
         require_once 'includes/funções.php';
 
-        $usuario = $_POST['usuario'] ?? null;
+        $usuário = $_POST['usuário'] ?? null;
         $senha = $_POST['senha'] ?? null;
         $acao = $_POST['açao'] ?? null;
     ?>
@@ -21,7 +21,7 @@
     <main>
 
     <?php
-    if (is_null($usuario) || is_null($senha)) 
+    if (is_null($usuário) || is_null($senha)) 
     {
         require_once 'formulário de login.php';
     } 
@@ -30,9 +30,9 @@
 
         $query =
     
-        "SELECT usuario, nome, senha, tipo 
-        FROM usuarios 
-        WHERE usuario = '$usuario' LIMIT 1";
+        "SELECT usuário, nome, senha, tipo 
+        FROM usuários 
+        WHERE usuário = '$usuário' LIMIT 1";
     
         $busca = $banco->query($query);
     
@@ -48,12 +48,12 @@
 
                 if (testar_hash($senha, $registro->senha)) 
                 {
-                    $_SESSION['usuario'] = $registro->usuario ;
+                    $_SESSION['usuário'] = $registro->usuário ;
                     $_SESSION['nome'] = $registro->nome;
                     $_SESSION['tipo'] = $registro->tipo;
                     sleep(1);
                     header(header: "Location: index.php");
-                    mensagem("Usuário: $registro->usuario, Nome: $registro->nome, Tipo: $registro->tipo", 'mensagem');
+                    mensagem("Usuário: $registro->usuário, Nome: $registro->nome, Tipo: $registro->tipo", 'mensagem');
                     exit();
                 }
 

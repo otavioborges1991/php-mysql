@@ -4,15 +4,15 @@
 $ação = $_GET['ação'] ?? null;
 
 session_start();
-if (!isset($_SESSION['usuario'])) {
-    $_SESSION['usuario'] = '';
+if (!isset($_SESSION['usuário'])) {
+    $_SESSION['usuário'] = '';
     $_SESSION['nome'] = '';
     $_SESSION['tipo'] = '';
 
 }
 
 function sair() {
-    unset($_SESSION['usuario']);
+    unset($_SESSION['usuário']);
     unset($_SESSION['nome']);
     unset($_SESSION['tipo']);
     session_unset();
@@ -42,3 +42,27 @@ function testar_hash($senha, $hash): bool {
     $ok = password_verify($senha, $hash);
     return $ok;
 }
+
+function is_logado() {
+    if (empty($_SESSION['usuário'])) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function user_type($tipo=null) {
+    // esta função retorna o tipo de usuário se o $tipo não for definido
+    // retorna verdadeiro se o tipo for igual ao $tipo definido, ou false se não for
+    // retorna null se $tipo e $_SESSION['tipo'] não forem definidos
+    if ($tipo == null) {
+        return $_SESSION['tipo'] ?? null;
+    } else {
+        if ($tipo == $_SESSION['tipo']) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+

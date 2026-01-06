@@ -12,7 +12,7 @@
     <?php
     require_once 'includes/login.php';
 
-    if (empty($_SESSION['usuario'])) {
+    if (empty($_SESSION['usuário'])) {
         require_once "formulário de login.php";
     } else {
         require_once 'informações de usuário.php';

@@ -2,6 +2,6 @@
 -- Rode testes com este arquivo SQL
 SELECT * FROM produtoras;
 SELECT * FROM generos;
-SELECT * FROM usuarios;
+SELECT * FROM usuários;
 SELECT * FROM jogos;
 

@@ -9,11 +9,11 @@
 <footer>
         <?php
         $data_atual = date("d/m/Y");
-        $ip_usuario = $_SERVER['REMOTE_ADDR'];
-        $usuario = get_current_user() ?? 'Visitante';
+        $ip_usuário = $_SERVER['REMOTE_ADDR'];
+        $usuário = get_current_user() ?? 'Visitante';
 
-        echo "<p>IP do usuário: $ip_usuario.</p>";
-        echo "<p>Usuário: $usuario.</p>";
+        echo "<p>IP do usuário: $ip_usuário.</p>";
+        echo "<p>Usuário: $usuário.</p>";
         echo "<p>Acessado em $data_atual.</p>";
         ?>
         Desenvolvido por Otávio Vinícius Borges &copy; 2025
