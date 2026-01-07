@@ -1,12 +1,9 @@
 @charset "UTF-8";
 
-@import url(cores.css);
+@import url(header.css);
+@import url(colors.css);
 @import url(main.css);
-@import url(ancora.css);
-@import url(formulário.css);
 @import url(media-query.css);
-@import url(mensagem.css);
-@import url(table.css);
 
 *,
 *::before,
@@ -53,22 +50,7 @@ body {
     flex-direction: row;
 }
 
-a.botão {
-    color:white;
-    background-color: var(--cor-secundaria);
-    margin: 10px;
-    font-size: smaller;
-    padding: 0px 5px 1px 5px;
-    border: 2px solid black;
-}
 
-a.botão:hover {
-    color:black;
-    background-color: var(--cor-terciaria);
-}
-a.botão-adm {
-    color: black;
-}
 
 span {
     position: relative;

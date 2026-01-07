@@ -65,4 +65,3 @@ function tipo($tipo=null) {
         }
     }
 }
-

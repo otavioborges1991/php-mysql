@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mensagem Arrastável</title>
+    <link rel="stylesheet" href="style/message.css">
 </head>
 <body>
     <div id='mensagem'>

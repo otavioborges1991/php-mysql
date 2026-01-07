@@ -57,11 +57,11 @@ function construir_query($chave, $criterio, $ordem): string {
 function mensagem($mensagem, $tipo='mensagem'): void {
     /*
     descrição:
-        um sistema de mensagem, ele usa estilos diferentes de acordo com o tipo
+        um sistema de mensagem, ele usa styles diferentes de acordo com o tipo
         tipos válidos são: erro, aviso, sucesso e mensagem.
         se um tipo inválido for usado sera mudado para o tipo mensagem.
         também usa um icone de acordo com o tipo.
-        o corpo html da mensagem é mantido em outro arquivo, Assim como o estilo usado.
+        o corpo html da mensagem é mantido em outro arquivo, Assim como o style usado.
     Argumentos:
         $mensagem = A mensagem a mostrar na tela
         $tipo = o tipo de mensagem.
@@ -76,7 +76,7 @@ function mensagem($mensagem, $tipo='mensagem'): void {
 
     $icone = tipo_de_icone($tipo);
 
-    include "mensagem.php";
+    include "message.php";
 }
 
 function tipo_de_icone($tipo) {

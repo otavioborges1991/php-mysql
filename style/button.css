@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+button.botão-voltar {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    float: left;
+    background-color: var(--cor-primaria);
+    color: white;
+}
+
+button.botão-voltar:hover {
+    background-color: var(--cor-secundaria);
+}
+
+a.botão {
+    color:white;
+    background-color: var(--cor-secundaria);
+    margin: 10px;
+    font-size: smaller;
+    padding: 0px 5px 1px 5px;
+    border: 2px solid black;
+}
+
+a.botão:hover {
+    color:black;
+    background-color: var(--cor-terciaria);
+}
+a.botão-adm {
+    color: black;
+}

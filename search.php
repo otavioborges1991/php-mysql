@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de Busca</title>
+    <link rel="stylesheet" href="style/form.css">
 </head>
 <button id="toggle-search" class="toggle-btn" data-target="#search-container" data-hide-text="Ocultar busca" aria-expanded="false">Buscar</button>
     <div id="search-container" class="login-hidden">
