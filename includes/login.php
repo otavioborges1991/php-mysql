@@ -43,7 +43,8 @@ function testar_hash($senha, $hash): bool {
     return $ok;
 }
 
-function is_logado() {
+function sessão() {
+    // retorna true se há uma sessão ativa.
     if (empty($_SESSION['usuário'])) {
         return false;
     } else {
@@ -51,10 +52,9 @@ function is_logado() {
     }
 }
 
-function user_type($tipo=null) {
+function tipo($tipo=null) {
     // esta função retorna o tipo de usuário se o $tipo não for definido
-    // retorna verdadeiro se o tipo for igual ao $tipo definido, ou false se não for
-    // retorna null se $tipo e $_SESSION['tipo'] não forem definidos
+    // retorna verdadeiro se o tipo for igual ao $tipo definido, ou false se não for.
     if ($tipo == null) {
         return $_SESSION['tipo'] ?? null;
     } else {

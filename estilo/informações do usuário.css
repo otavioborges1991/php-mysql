@@ -5,3 +5,8 @@ img#foto-usuário {
     max-height: 50px;
     border-radius: 50%;
 }
+
+a#botão-sair:hover {
+    color: black;
+    background-color: var(--cor-terciaria);
+}

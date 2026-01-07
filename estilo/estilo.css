@@ -2,11 +2,11 @@
 
 @import url(cores.css);
 @import url(main.css);
-@import url(table.css);
 @import url(ancora.css);
 @import url(formulário.css);
 @import url(media-query.css);
 @import url(mensagem.css);
+@import url(table.css);
 
 *,
 *::before,
@@ -53,7 +53,7 @@ body {
     flex-direction: row;
 }
 
-a#botão-sair {
+a.botão {
     color:white;
     background-color: var(--cor-secundaria);
     margin: 10px;
@@ -62,7 +62,19 @@ a#botão-sair {
     border: 2px solid black;
 }
 
-a#botão-sair:hover {
-    color: black;
+a.botão:hover {
+    color:black;
     background-color: var(--cor-terciaria);
+}
+a.botão-adm {
+    color: black;
+}
+
+span {
+    position: relative;
+    top: 5px;
+}
+
+.inline-block {
+    display: inline-block;
 }

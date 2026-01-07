@@ -59,4 +59,23 @@
 
     }
 
+    
+    div#user-info {
+        display: flex;
+        flex-direction: row;
+        gap:5px;
+    }
+
+    div#user-info-div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    div#dados {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        padding-left: 15px;
+    }
 }
