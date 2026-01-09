@@ -8,11 +8,9 @@ button.botão-voltar {
     background-color: var(--cor-primaria);
     color: white;
 }
-
 button.botão-voltar:hover {
     background-color: var(--cor-secundaria);
 }
-
 a.botão {
     color:white;
     background-color: var(--cor-secundaria);
@@ -21,7 +19,6 @@ a.botão {
     padding: 0px 5px 1px 5px;
     border: 2px solid black;
 }
-
 a.botão:hover {
     color:black;
     background-color: var(--cor-terciaria);

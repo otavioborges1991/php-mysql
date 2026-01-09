@@ -13,58 +13,66 @@
 <?php include 'header.php'; ?>
 <main class="detalhes">
     <?php 
-            // Conexão com o banco de dados
-            require_once 'includes/banco.php';
-            // Funções auxiliares
-            require_once 'includes/funções.php';
-            $c = $_GET['cod'] ?? 0;
-            if (!$c or $c == 0) {
-                echo "<p>Jogo inválido</p>";
+        
+        // Conexão com o banco de dados
+        require_once 'includes/banco.php';
+        // Funções auxiliares
+        require_once 'includes/funções.php';
+        $c = $_GET['cod'] ?? 0;
+        
+        if (!$c or $c == 0) 
+        {
+            echo "<p>Jogo inválido</p>";
+            exit();
+        } 
+        
+        $busca = $banco->query("SELECT * FROM jogos WHERE cod=$c");
+        
+        if (!$busca) 
+        {
+            echo "<p>Falha na busca: $banco->error</p>";
+        } 
+        else {
+            if ($busca->num_rows == 0) 
+            {
+                echo "<p>Jogo não cadastrado</p>";
                 exit();
             } 
-            $busca = $banco->query("SELECT * FROM jogos WHERE cod=$c");
-            if (!$busca) {
-                echo "<p>Falha na busca: $banco->error</p>";
-            } else {
-                if ($busca->num_rows == 0) {
-                    echo "<p>Jogo não cadastrado</p>";
-                    exit;
-                } else if ($busca->num_rows == 1) {
-                    $reg = $busca->fetch_object();
-                    $foto = thumb($reg->capa);
-                    echo "<img id='foto' src=" . $foto . " alt='Foto'>
-                    <div id='conteudo-escrito'>
-                    <h2 id='nome'>$reg->nome</h2>
-                    <div class='inline-block'>
-                        <h3>Nota:" . number_format($reg->nota, 1). "/10</h3>
-                    </div>
-                    <div class='inline-block'>";   
-        if (tipo() == 'admin') 
-        {
-            echo "<td class='adm'>
-            <a class='botão-adm' href=''><span class='material-symbols-outlined'>edit</span></a>
-            <a class='botão-adm' href=''><span class='material-symbols-outlined'>delete</span></a></td>";
-        } 
+            else if ($busca->num_rows == 1) 
+            {
+                $reg = $busca->fetch_object();
+                $foto = thumb($reg->capa);
+                echo "<img id='foto' src=" . $foto . " alt='Foto'>
+                <div id='conteudo-escrito'>
+                <h2 id='nome'>$reg->nome</h2>
+                <div class='inline-block'>
+                    <h3>Nota:" . number_format($reg->nota, 1). "/10</h3>
+                </div>
+                <div class='inline-block'>";   
+            if (tipo() == 'admin') 
+            {
+                echo "<td class='adm'>
+                <a class='botão-adm' href=''><span class='material-symbols-outlined'>edit</span></a>
+                <a class='botão-adm' href=''><span class='material-symbols-outlined'>delete</span></a></td>";
+            } 
 
-        elseif (tipo() == 'editor') 
-        {
-            echo "<td class='adm'><a class='botão-adm' href=''><span class='material-symbols-outlined'>edit</span></a></td>";
-        }
-
-        echo "</div><p id='descricao'>";
-        echo "$reg->descricao" . "</p>
-        </div>";
-                } else {
-
-                    echo "<p>Erro: mais de um jogo com o mesmo código</p>";
-                    exit;
-
-                }
+            elseif (tipo() == 'editor') 
+            {
+                echo "<td class='adm'><a class='botão-adm' href=''><span class='material-symbols-outlined'>edit</span></a></td>";
             }
-            ?>
-        <button class="material-symbols-outlined botao-voltar" onclick='history.back()'>
-            keyboard_arrow_left
-        </button>
+
+            echo "</div><p id='descricao'>";
+            echo "$reg->descricao" . "</p></div>";
+            } else {
+                echo "<p>Erro: mais de um jogo com o mesmo código</p>";
+                exit();
+
+            }
+        }
+    ?>
+    <button class="material-symbols-outlined botão-voltar" onclick='history.back()'>
+        keyboard_arrow_left
+    </button>
     </main>
     <?php include 'footer.php'; ?>
 </body>
