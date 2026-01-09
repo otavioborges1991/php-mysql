@@ -22,7 +22,7 @@
             <p>Efetue Login para acessar seu perfil.</p>
         <?php elseif (!isset($_POST['usuário'])): ?>
             <h2>Seu perfil</h2>
-            <form action="user-edit-script.php">
+            <form action="user-edit-script.php" method="post">
                 <fieldset class="flex-row">
                     <legend>Alterar informações pessoais</legend>
                     <div class="flex-column">
