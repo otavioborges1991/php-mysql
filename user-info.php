@@ -10,12 +10,12 @@
         </div>
         <div id="botões">
             <?php 
-                echo "<a class='botão' href='user-data.php'>Meus dados</a>";
+                echo "<a class='botão' href='perfil.php'>Perfil</a>";
                 if (tipo() == 'admin') {
                     echo 
                     "<a class='botão' href='user-add.php'>
-                    Novo usuário</a>";
-                    echo "<a class='botão' href='game-add.php'>Novo jogo</a>";
+                    Usuários</a>";
+                    echo "<a class='botão' href='game-add.php'>Jogos</a>";
                 }
             ?>
             <a class='botão' href='logout.php'>Sair</a>

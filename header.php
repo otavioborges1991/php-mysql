@@ -10,8 +10,12 @@
 </head>
 <header>
     <button id="toggle-login" class="toggle-btn" data-target="#login-container" data-hide-text="Ocultar Login/Cadastro" aria-expanded="false">Login/Cadastro</button>
+    <div id="area-mensagem">
     <?php
     require_once 'includes/login.php';
+    require_once 'includes/mensagem.php';
+
+    mensagem('receber');
 
     if (empty($_SESSION['usuário'])) {
         require_once "login-form.php";
@@ -19,6 +23,7 @@
         require_once 'user-info.php';
     }
     ?>
+</div>
 </header>
 
 <script src="scripts/toggle-login.js"></script>

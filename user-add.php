@@ -50,12 +50,6 @@
                                 <option value='leitor' selected>Leitor</option>
                             </select>";
                         }
-
-                        $mensagem = $_GET['mensagem'] ?? null;
-                        $tipo = $_GET['tipo'] ?? null;
-                        if (!is_null($mensagem)) {
-                            mensagem($mensagem, $tipo);
-                        }
     
                         ?>
                 </div>

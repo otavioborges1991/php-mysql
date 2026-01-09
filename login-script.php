@@ -2,6 +2,7 @@
     require_once 'includes/login.php';
     require_once 'includes/banco.php';
     require_once 'includes/funções.php';
+    require_once 'includes/mensagem.php';
 
     $usuário = $_POST['usuário'] ?? null;
     $senha = $_POST['senha'] ?? null;
@@ -25,7 +26,8 @@ if ($ação == 'entrar')
         $busca = $banco->query($query);
     
         if (!$busca) {
-            header("Location: index.php&mensagem=Falha na consulta ao banco de dados&tipo=erro");
+            mensagem("enviar", "Falha na consulta ao banco de dados", "erro");
+            exit();
         } else {
 
             $registro = $busca->fetch_object();
@@ -40,26 +42,27 @@ if ($ação == 'entrar')
                     $_SESSION['nome'] = $registro->nome;
                     $_SESSION['tipo'] = $registro->tipo;
                     header("Location: index.php");
+                    exit();
                 }
 
                 else 
 
                 {
-                    header("Location: index.php?mensagem=Usuário ou senha incorreta&tipo=aviso");
+                    mensagem("enviar", "Usuário ou senha incorreta", "aviso");
+                    exit();
                 }
             } 
             else
 
             {
-                header("Location: index.php?mensagem=Usuário não existe&tipo=aviso");
+                mensagem("enviar", "Usuário não existe", "aviso");
+                exit();
             }
         }
     }
 } else if ($ação == 'cadastrar') {
     header(header: 'Location: user-add.php');
 } else {
-    header('Location: index.php?mensagem=Ação inválida! como você fez isso?&tipo=erro');
+    mensagem("enviar", "Ação inválida! como você fez isso?", "erro");
+    exit();
 }
-
-
-

@@ -6,15 +6,14 @@
     <title>Banco de Jogos</title>
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/table.css">
+    <link rel="stylesheet" href="style/message.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=editdelete" />
 </head>
 <body>
     <?php
-        // Conexão com o banco de dados
+        require_once 'includes/mensagem.php';
         require_once 'includes/banco.php';
-        // Funções auxiliares
         require_once 'includes/funções.php';
-        // Cabeçalho da página
         require_once 'header.php';
     ?>
     <main>
@@ -24,11 +23,6 @@
             require_once 'search.php';
         ?>
     <?php
-        $mensagem = $_GET['mensagem'] ?? null;
-        $tipo = $_GET['tipo'] ?? null;
-        if (!is_null($mensagem)) {
-            mensagem($mensagem, $tipo);
-        }
         // Estes 2 tem que mudar dinamicamente de acordo com o formulário de busca
         $criterio = $_GET['criterio'] ?? "cod";
         $ordem = $_GET['ordem'] ?? "ASC";

@@ -45,3 +45,68 @@
     background-color: var(--cor-primaria);
 }
 
+.mensagem-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.mensagem-header.erro {
+    background-color: #fee;
+    border: 1px solid #fcc;
+    color: #c00;
+}
+
+.mensagem-header.aviso {
+    background-color: #ffeaa7;
+    border: 1px solid #ffdb58;
+    color: #8b6914;
+}
+
+.mensagem-header.sucesso {
+    background-color: #c8e6c9;
+    border: 1px solid #81c784;
+    color: #2e7d32;
+}
+
+.mensagem-header.mensagem {
+    background-color: #e3f2fd;
+    border: 1px solid #90caf9;
+    color: #1565c0;
+}
+
+.mensagem-icone {
+    font-size: 18px;
+}
+
+.mensagem-tipo {
+    font-weight: bold;
+    min-width: 60px;
+}
+
+.mensagem-texto {
+    margin: 0;
+    flex: 1;
+}
+
+.mensagem-fechar {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0.7;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mensagem-fechar:hover {
+    opacity: 1;
+}
